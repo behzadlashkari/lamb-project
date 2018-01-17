@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Lamb{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}">
+    {% endblock %}
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark nav-desk">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav col-sm-10">
+                <li class="nav-item active">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav col-sm-2 social-icons">
+                <li class="nav-item instagram">
+                    <a class="nav-link" href="#"><img src="{{ asset('images/instagram-icon-good.png') }}"></a>
+                </li>
+                <li class="nav-item pinterest">
+                    <a class="nav-link" href="#"><img src="{{ asset('images/pinterest_logo.png') }}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Content -->
+
+<header>
+    <div class="logo-wrapper"><a href="#"><img src="{{ asset('images/lamb_logo.png') }}" /></a></div>
+</header>
+<div class="main-container">
+    {% block body %}{% endblock %}
+
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/motion-ui/dist/motion-ui.min.js') }}"></script>
+    <script src="{{ asset('vendor/WOW/dist/wow.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+
+
+</body>
+
+</html>

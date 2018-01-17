@@ -1,0 +1,21 @@
+{
+  "name": "lamb",
+  "version": "1.0.0",
+  "description": "Sass bootstrap based theme for the Lamb website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "watch": "gulp",
+    "build": "gulp sass"
+  },
+  "author": "Bez",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1"
+  },
+  "dependencies": {
+    "motion-ui": "^1.2.3"
+  }
+}

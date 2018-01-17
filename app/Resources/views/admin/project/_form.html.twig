@@ -1,0 +1,13 @@
+{{ form_start(projectForm) }}
+
+                    {{ form_row(projectForm.title) }}
+                    {{ form_row(projectForm.strapline, {
+                        'label':'Project Strapline'
+                    }) }}
+                    {{ form_row(projectForm.description) }}
+                    {{ form_row(projectForm.imageFile) }}
+                    {{ form_row(projectForm.isPublished) }}
+
+<button type="submit" class="btn btn-primary" formnovalidate>Save</button>
+
+{{ form_end(projectForm) }}
