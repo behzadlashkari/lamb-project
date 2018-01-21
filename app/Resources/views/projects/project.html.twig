@@ -9,11 +9,9 @@
       <div class="content-column">
         <h1>{{ project.title }}</h1>
         <p>{{ project.description }}</p>
-        {#{% for pro in project %}#}
-          {#{% for imageFile in pro.imageFile %}#}
-            <img src="{{ vich_uploader_asset(project, 'imageFile') }}" />
-          {#{% endfor %}#}
-        {#{% endfor %}#}
+        {% for file in project.files %}
+          <img src="{{ asset('images/projects/' ~ file) }}"  />
+        {% endfor %}
         <div class="other-project-links">
           <ul>
             <li><a href="#">Project one</a></li>

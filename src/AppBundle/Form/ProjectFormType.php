@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class ProjectFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -17,9 +18,7 @@ class ProjectFormType extends AbstractType
             ->add('title')
             ->add('strapline')
             ->add('description')
-            ->add('imageFile',  FileType::class, [
-                'multiple' => true
-            ])
+            ->add('files', FileType::class, array('attr'=>array('class'=>'form-control'), 'multiple' => true))
             ->add('isPublished', ChoiceType::class, [
                 'choices' => [
                     'Yes' => true,
@@ -27,6 +26,19 @@ class ProjectFormType extends AbstractType
                 ]
             ]);
     }
+
+//    MIGHT NEED TO UNCOMMENT AND FIX CODE BELOW
+
+//    public function setDefaultOptions(OptionsResolverInterface $resolver)
+//    {
+//        $resolver->setDefaults(
+//            array(
+//                'data_class' => 'AppBundle\Entity\ProductImages',
+//            )
+//        );
+//    }
+
+
 
     public function configureOptions(OptionsResolver $resolver)
     {

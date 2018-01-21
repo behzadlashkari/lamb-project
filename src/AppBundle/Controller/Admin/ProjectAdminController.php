@@ -7,6 +7,8 @@ use AppBundle\Form\ProjectFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/admin")
@@ -27,18 +29,46 @@ class ProjectAdminController extends Controller
         ));
     }
 
+
+
+
+
     /**
      * @Route("/projects/new", name="admin_project_new")
      */
     public function newProject(Request $request)
     {
+        //$project = new Project();
         $form = $this->createForm(ProjectFormType::class);
 
         $form->handleRequest($request);
 
+        //$files = $request->get('files', []);
+
         if($form->isSubmitted() && $form->isValid()) {
             $project = $form->getData();
-            dump($form->getData());die;
+            $files = $form->getData()->getFiles();
+            $images = [];
+
+            //dump($files);die;
+            foreach($files as $file) {
+                // Extension is hardcoded, will need to get it using guessExtension() http://api.symfony.com/3.4/Symfony/Component/HttpFoundation/File.html
+                $fileName = md5(uniqid()).'.jpg';
+
+                $file->move(
+                    $this->getParameter('image_directory'),
+                    $fileName
+                );
+                $images[$fileName] = $fileName;
+
+
+
+
+
+
+            }
+
+            $project->setFiles($images);
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();
@@ -52,6 +82,11 @@ class ProjectAdminController extends Controller
             'projectForm' => $form->createView()
         ]);
     }
+
+
+
+
+
 
     /**
      * @Route("/projects/{id}/edit", name="admin_project_edit")
