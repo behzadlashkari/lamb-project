@@ -49,6 +49,12 @@ class ProjectAdminController extends Controller
             $project = $form->getData();
             $files = $form->getData()->getFiles();
             $images = [];
+            $listingImage = $form->getData()->getListingImage();
+            $listingFileName = md5(uniqid()).'.jpg';
+            $listingImage->move(
+                $this->getParameter('image_directory'),
+                $listingFileName
+            );
 
             //dump($files);die;
             foreach($files as $file) {
@@ -68,7 +74,9 @@ class ProjectAdminController extends Controller
 
             }
 
+            $project->setListingImage($listingFileName);
             $project->setFiles($images);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($project);
             $em->flush();

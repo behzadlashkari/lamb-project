@@ -19,6 +19,7 @@ class ProjectFormType extends AbstractType
             ->add('strapline')
             ->add('description')
             ->add('files', FileType::class, array('attr'=>array('class'=>'form-control'), 'multiple' => true))
+            ->add('listingImage', FileType::class, array('attr'=>array('class'=>'form-control')))
             ->add('isPublished', ChoiceType::class, [
                 'choices' => [
                     'Yes' => true,

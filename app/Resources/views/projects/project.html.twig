@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block theme 'projects' %}
+
+{% block header %}
+{#@TODO - link logo to front page#}
+
+  <div class="logo-wrapper"><img src="{{ asset('images/lamb_logo.png') }}" /></div>
+
+{% endblock %}
+
 {% block body %}
 
 <div class="container">
@@ -9,9 +18,7 @@
       <div class="content-column">
         <h1>{{ project.title }}</h1>
         <p>{{ project.description }}</p>
-        {% for file in project.files %}
-          <img src="{{ asset('images/projects/' ~ file) }}"  />
-        {% endfor %}
+
         <div class="other-project-links">
           <ul>
             <li><a href="#">Project one</a></li>
@@ -45,32 +52,18 @@
 
             <div id="lightgallery" class="row">
 
-                <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                  <img src="images/placeholder_image.jpeg" />
-                </a>
-                <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                  <img src="images/placeholder_image.jpeg" />
-                </a>
-                <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                  <img src="images/placeholder_image.jpeg" />
-                </a>
-                <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                  <img src="images/placeholder_image.jpeg" />
-                </a>
+              {#<a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">#}
+                {#<img src="images/placeholder_image.jpeg" />#}
+              {#</a>#}
 
-              <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                <img src="images/placeholder_image.jpeg" />
-              </a>
-              <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                <img src="images/placeholder_image.jpeg" />
-              </a>
-              <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                <img src="images/placeholder_image.jpeg" />
-              </a>
-              <a href="images/placeholder_image.jpeg" class="col-12 col-sm-6">
-                <img src="images/placeholder_image.jpeg" />
-              </a>
-              </div>
+                {% for file in project.files %}
+                  <a href="#" class="col-12 col-sm-6">
+                    <img src="{{ asset('images/projects/' ~ file) }}"  />
+                  </a>
+                {% endfor %}
+
+
+            </div>
 
 
         </div>

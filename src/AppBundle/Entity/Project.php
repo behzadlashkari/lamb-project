@@ -135,7 +135,7 @@ class Project
     /**
      * @var array
      *
-     * @ORM\Column(name="files", type="array", length=255)
+     * @ORM\Column(name="files", type="array", length=2000)
      * @Assert\NotBlank(message="You must select at least one valid image file.")
      *
      */
@@ -159,5 +159,35 @@ class Project
     {
         return $this->files;
     }
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="listingimage", type="string")
+     * @Assert\NotBlank(message="You must select at least one valid image file.")
+     *
+     */
+    private $listingImage;
+
+    /**
+     * @return string
+     */
+    public function getListingImage()
+    {
+        return $this->listingImage;
+    }
+
+    /**
+     * @param mixed $listingImage
+     */
+    public function setListingImage($listingImage)
+    {
+        $this->listingImage = $listingImage;
+
+        return $this;
+    }
+
+
 
 }
