@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Admin;
 use AppBundle\Entity\Project;
 use AppBundle\Form\ProjectFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File;
@@ -12,6 +13,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @Route("/admin")
+ * @Security("is_granted('ROLE_USER')")
  */
 class ProjectAdminController extends Controller
 {

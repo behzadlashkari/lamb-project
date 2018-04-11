@@ -17,4 +17,6 @@
 /web/bundles/
 
 /web/images/projects
-/node_modules
+node_modules
+.idea/lamb-project.iml
+.DS_Store

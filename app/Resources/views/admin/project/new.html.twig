@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block theme 'admin-new-project' %}
+
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-sm-12">
                 <h1>New Project</h1>
 
                 {{ include('admin/project/_form.html.twig') }}

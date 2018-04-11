@@ -1,10 +1,13 @@
 {% extends 'main.html.twig' %}
 
+{% block theme 'projects' %}
+
 {% block body %}
+    <div class="projects-wrapper">
     {% for project in projects %}
-        <div class="projects-wrapper">
+
             <div class="container">
-                <div class="project col col-12 col-sm-6 col-md-4">
+                <div class="project">
                     <div class="project-inner-wrapper">
                         <a href="{{ path('project_individual',{'title':project.title}) }}">
                             <div class="image-wrapper">
@@ -12,14 +15,13 @@
                                 <div class="title-wrapper">
                                     <h2>{{ project.title }}</h2>
                                     <h3>{{ project.strapline }}</h3>
-
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
 
+    {% endfor %}
+    </div>
 {% endblock %}

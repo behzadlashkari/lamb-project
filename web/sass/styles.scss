@@ -1,4 +1,4 @@
-@import '../motion-ui/src/motion-ui';
+@import '../vendor/motion-ui/src/motion-ui';
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
@@ -84,7 +84,7 @@ button {
   max-width:100%;
 }
 
-body.index, body.homepage {
+body.index, body.homepage, body.contact {
   background:#ccc;
 }
 
@@ -119,6 +119,9 @@ h3, h4, h5, h6 {
 }
 
 .index {
+  header {
+    padding:0;
+  }
   .main-container {
     padding: 0 0 60px 0;
   }
@@ -334,12 +337,18 @@ a {
 
 .index {
   .initial-load {
-    background-image:url('../images/front_background_2.jpg');
-    height: 100vh;
+    background-image:url('../images/living_room1.jpg');
+    height: 45vh;
     background-repeat: no-repeat;
     background-size: cover;
     position:relative;
     background-position: center;
+    @media #{$tablet} {
+      height:60vh;
+    }
+    @media #{$normal} {
+      height:100vh;
+    }
   }
   .logo-wrapper {
     padding-top:30px;
@@ -451,4 +460,40 @@ a {
 .slide-fade {
   @include mui-animation(slide,fade);
   animation-duration: 1s;
+}
+
+.projects-wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  > .container {
+    width:33%;
+  }
+}
+
+.admin-projects {
+  background:#ccc;
+  header {
+    padding:0;
+  }
+}
+
+.admin-new-project {
+  background:#ccc;
+  header {
+    padding:0;
+  }
+}
+
+// Contact form
+
+.contact-form-wrapper {
+  @media #{$tablet} {
+    max-width:800px;
+    margin:0 auto;
+  }
+  form {
+    > div {
+      margin-bottom:15px;
+    }
+  }
 }

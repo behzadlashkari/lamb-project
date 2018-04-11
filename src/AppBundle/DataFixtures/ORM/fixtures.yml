@@ -1,0 +1,4 @@
+AppBundle\Entity\User:
+    user_{1}:
+        email: bezlash@gmail.com
+        plainPassword: iliketurtles

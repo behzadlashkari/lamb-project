@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav col-sm-10">
                     <li class="nav-item active">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link" href="{{ path('projects_listing') }}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{{ path('homepage', {'_fragment': 'aboutus'}) }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="{{ path('homepage', {'_fragment': 'services'}) }}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ path('contact_form') }}">Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav col-sm-2 social-icons">

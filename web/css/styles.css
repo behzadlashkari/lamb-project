@@ -791,7 +791,7 @@ button {
 .container {
   max-width: 100%; }
 
-body.index, body.homepage {
+body.index, body.homepage, body.contact {
   background: #ccc; }
 
 body.projects {
@@ -819,6 +819,9 @@ h3, h4, h5, h6 {
 
 .main-container {
   padding: 20px 10px 60px 10px; }
+
+.index header {
+  padding: 0; }
 
 .index .main-container {
   padding: 0 0 60px 0; }
@@ -986,12 +989,18 @@ a {
   background-image: url("../images/front_background_2.jpg"); }
 
 .index .initial-load {
-  background-image: url("../images/front_background_2.jpg");
-  height: 100vh;
+  background-image: url("../images/living_room1.jpg");
+  height: 45vh;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   background-position: center; }
+  @media only screen and (min-width: 768px) {
+    .index .initial-load {
+      height: 60vh; } }
+  @media only screen and (min-width: 992px) {
+    .index .initial-load {
+      height: 100vh; } }
 
 .index .logo-wrapper {
   padding-top: 30px; }
@@ -1122,3 +1131,30 @@ a {
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1; } }
+
+.projects-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .projects-wrapper > .container {
+    width: 33%; }
+
+.admin-projects {
+  background: #ccc; }
+  .admin-projects header {
+    padding: 0; }
+
+.admin-new-project {
+  background: #ccc; }
+  .admin-new-project header {
+    padding: 0; }
+
+@media only screen and (min-width: 768px) {
+  .contact-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto; } }
+
+.contact-form-wrapper form > div {
+  margin-bottom: 15px; }

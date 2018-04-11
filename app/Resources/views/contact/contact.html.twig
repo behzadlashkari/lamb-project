@@ -1,0 +1,52 @@
+{# contact.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block theme 'contact' %}
+
+{% block header %}
+    {#@TODO - link logo to front page#}
+
+    <div class="logo-wrapper"><a href="{{ path('homepage') }}"><img src="{{ asset('images/lamb_logo.png') }}" /></a></div>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="contact-form-wrapper">
+
+        <div class="contact-info">
+            <p>6 Blythwood Road<br>
+            Crouch End<br>
+            London<br>
+            N4 4EU</p>
+
+            <p><a href="mailto:lisa@lamb-design.co.uk">lisa@lamb-design.co.uk</a></p>
+
+        </div>
+        {{ form_start(form) }}
+
+        <div>
+            {{ form_widget(form.name) }}
+            {{ form_errors(form.name) }}
+        </div>
+        <div>
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div>
+            {{ form_widget(form.message) }}
+            {{ form_errors(form.message) }}
+        </div>
+
+        {# Render CSRF token etc .#}
+        <div style="display:none">
+            {{ form_rest(form) }}
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-default">
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

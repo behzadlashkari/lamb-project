@@ -47,7 +47,7 @@ class ProjectsController extends Controller
     }
 
     /**
-     * @Route("/projects")
+     * @Route("/projects", name="projects_listing")
      */
     public function showProjects()
     {
